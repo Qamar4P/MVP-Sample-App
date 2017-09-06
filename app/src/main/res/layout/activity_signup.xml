@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pk.net.now.cornellmobileapp.ui.registeration.SignupActivity"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_toobar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            >
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"/>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="40"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:inputType="textEmailAddress"
+                android:hint="Email address" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--<EditText-->
+                    <!--android:id="@+id/title"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="0.1"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:maxLength="40"-->
+                    <!--android:inputType="text"-->
+                    <!--android:hint="Mr" />-->
+                <Spinner
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/person_name_title"
+                    android:entryValues="@array/person_name_title"
+                    android:drawSelectorOnTop="true"
+                    android:layout_gravity="left|center_vertical"
+                    style="@style/Base.Widget.AppCompat.DropDownItem.Spinner"/>
+
+                <EditText
+                    android:id="@+id/firstName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="First Name" />
+                <EditText
+                    android:id="@+id/secondName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="Second Name" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/dateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="40"
+                android:inputType="text"
+                android:hint="Date of birth" />
+            <EditText
+                android:id="@+id/mobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="40"
+                android:inputType="phone"
+                android:hint="Mobile number" />
+
+            <CheckBox
+                android:id="@+id/subscribToNewsLetter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subscribe to news letter"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home Address"/>
+
+            <!--<EditText-->
+                <!--android:id="@+id/homeCountry"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ems="10"-->
+                <!--android:maxLength="40"-->
+                <!--android:inputType="text"-->
+                <!--android:hint="Country" />-->
+            <Spinner
+                android:id="@+id/homeCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/homeCity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="City" />
+
+                <EditText
+                    android:id="@+id/homePostCode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="Post code" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/homeAddressLine1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:lines="1"
+                android:maxLength="40"
+                android:inputType="text"
+                android:hint="Address line 1" />
+            <EditText
+                android:id="@+id/homeAddressLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:lines="1"
+                android:maxLength="40"
+                android:inputType="textEmailAddress"
+                android:hint="Address line 2" />
+            <TextView
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shipping Address"/>
+
+            <EditText
+                android:id="@+id/shippingCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="40"
+                android:inputType="text"
+                android:hint="Country" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/shippingCity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="City" />
+
+                <EditText
+                    android:id="@+id/shippingPostCode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="Post code" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/shippingAddressLine1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:lines="1"
+                android:maxLength="40"
+                android:inputType="text"
+                android:hint="Address line 1" />
+            <EditText
+                android:id="@+id/shippingAddressLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:lines="1"
+                android:maxLength="40"
+                android:inputType="textEmailAddress"
+                android:hint="Address line 2" />
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Billing Address"/>
+
+            <EditText
+                android:id="@+id/billingCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="40"
+                android:inputType="text"
+                android:hint="Country" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/billingCity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="City" />
+
+                <EditText
+                    android:id="@+id/billingPostCode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:maxLength="40"
+                    android:inputType="text"
+                    android:hint="Post code" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/billingAddressLine1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:lines="1"
+                android:maxLength="40"
+                android:inputType="text"
+                android:hint="Address line 1" />
+            <EditText
+                android:id="@+id/billingAddressLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:lines="1"
+                android:maxLength="40"
+                android:inputType="textEmailAddress"
+                android:hint="Address line 2" />
+
+
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                style="@style/AppButton"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

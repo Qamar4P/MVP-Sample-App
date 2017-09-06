@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:elevation="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_size"
+    android:background="#fefefe">
+
+    <TextView
+        android:id="@+id/textToolbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:text="@string/cornell_distributors"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+</android.support.v7.widget.Toolbar>
