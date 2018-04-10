@@ -1,56 +1,76 @@
 package pk.net.now.cornellmobileapp.ui.registeration;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import pk.net.now.cornellmobileapp.ui.home.HomeActivity;
-import pk.net.now.cornellmobileapp.ui.registeration.support.LoginPresenter;
-import pk.net.now.cornellmobileapp.ui.registeration.support.LoginView;
+import pk.net.now.cornellmobileapp.ui.launch.LaunchActivity;
 import pk.net.now.cornellmobileapp.ui.shared.BaseActivity;
 import pk.net.now.cornellmobileapp.R;
+import pk.net.now.cornellmobileapp.ui.shared.AppUtils;
 
-public class LoginActivity extends BaseActivity implements LoginView, View.OnClickListener {
+public class LoginActivity extends BaseActivity implements LoginPresenter.LoginView {
 
     LoginPresenter presenter = new LoginPresenter();
-    private EditText editEmail,editPassword;
+    //UI vars
+    @BindView(R.id.email) EditText emailView;
+    @BindView(R.id.password) EditText passwordView;
+    private Dialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         presenter.attach(this);
-        initUi();
     }
 
-    private void initUi() {
-        editEmail = (EditText) findViewById(R.id.email);
-        editPassword = (EditText) findViewById(R.id.password);
-        findViewById(R.id.buttonLogin).setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.buttonLogin:
-
-                break;
+    @OnClick(R.id.buttonLogin)
+    public void tapLogin(View view) {
+        final String email = emailView.getText().toString().trim();
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailView.setError("Enter valid email!");
+            emailView.requestFocus();
+            return;
         }
+        final String password = passwordView.getText().toString().trim();
+        if (password.isEmpty() || password.length() <4) {
+            passwordView.setError("Enter valid password of at least 4 characters!");
+            passwordView.requestFocus();
+            return;
+        }
+        AppUtils.changeKeyboardVisibility(getCurrentFocus(),false);
+
+        pd = AppUtils.getProgressDialog(this);
+        pd.show();
+        presenter.login(email,password);
     }
 
     @Override
     public void success() {
-        Toast.makeText(this,"Successfully logged in!",Toast.LENGTH_SHORT).show();
+        if (pd != null && pd.isShowing()) {
+            pd.dismiss();
+        }
+        toast("Successfully logged in!");
+        HomeActivity.start(this);
+        finish();
     }
 
     @Override
     public void error(@StringRes int errorRes) {
-        Toast.makeText(this,errorRes,Toast.LENGTH_SHORT).show();
-        Toast.makeText(this,"Demo logged in!",Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this,HomeActivity.class));
+        if (pd != null && pd.isShowing()) {
+            pd.dismiss();
+        }
+        toast(getString(errorRes));
+        toast("Demo logged in!");
+        HomeActivity.start(this);
         finish();
     }
 
@@ -58,5 +78,9 @@ public class LoginActivity extends BaseActivity implements LoginView, View.OnCli
     protected void onDestroy() {
         super.onDestroy();
         presenter.detach();
+    }
+
+    public static void start(Context context) {
+        context.startActivity(new Intent(context, LoginActivity.class));
     }
 }

@@ -9,7 +9,7 @@ import pk.net.now.cornellmobileapp.data.PrefsHelper;
  */
 
 public class App extends Application {
-    private App instance;
+    public static App instance;
     private PrefsHelper prefs;
 
     @Override
@@ -17,5 +17,10 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         prefs = new PrefsHelper(instance);
+
+    }
+
+    public static PrefsHelper prefs(){
+        return instance.prefs;
     }
 }

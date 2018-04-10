@@ -33,6 +33,7 @@
 
             <EditText
                 android:id="@+id/email"
+                android:lines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -74,6 +75,7 @@
 
                 <EditText
                     android:id="@+id/firstName"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
@@ -82,6 +84,7 @@
                     android:hint="First Name" />
                 <EditText
                     android:id="@+id/secondName"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
@@ -92,6 +95,7 @@
 
             <EditText
                 android:id="@+id/dateOfBirth"
+                android:lines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -99,7 +103,17 @@
                 android:inputType="text"
                 android:hint="Date of birth" />
             <EditText
+                android:id="@+id/contactNumber"
+                android:lines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="40"
+                android:inputType="phone"
+                android:hint="Contact number" />
+            <EditText
                 android:id="@+id/mobileNumber"
+                android:lines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -111,6 +125,7 @@
                 android:id="@+id/subscribToNewsLetter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Subscribe to news letter"/>
 
             <TextView
@@ -137,6 +152,7 @@
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/homeCity"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -147,6 +163,7 @@
 
                 <EditText
                     android:id="@+id/homePostCode"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -180,20 +197,26 @@
                 android:layout_height="wrap_content"
                 android:text="Shipping Address"/>
 
-            <EditText
+            <!--<EditText-->
+                <!--android:id="@+id/shippingCountry"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ems="10"-->
+                <!--android:maxLength="40"-->
+                <!--android:inputType="text"-->
+                <!--android:hint="Country" />-->
+
+            <Spinner
                 android:id="@+id/shippingCountry"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:maxLength="40"
-                android:inputType="text"
-                android:hint="Country" />
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/shippingCity"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -204,6 +227,7 @@
 
                 <EditText
                     android:id="@+id/shippingPostCode"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -238,20 +262,26 @@
                 android:layout_height="wrap_content"
                 android:text="Billing Address"/>
 
-            <EditText
+            <!--<EditText-->
+                <!--android:id="@+id/billingCountry"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ems="10"-->
+                <!--android:maxLength="40"-->
+                <!--android:inputType="text"-->
+                <!--android:hint="Country" />-->
+
+            <Spinner
                 android:id="@+id/billingCountry"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:maxLength="40"
-                android:inputType="text"
-                android:hint="Country" />
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/billingCity"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -262,6 +292,7 @@
 
                 <EditText
                     android:id="@+id/billingPostCode"
+                    android:lines="1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"

@@ -29,7 +29,7 @@ public class PrefsHelper {
                 .apply();
     }
     public String getToken() {
-        return mPrefs.getString("token",null);
+        return mPrefs.getString("token",AppConst.DEFAULT_ACCESS_TOKEN);
     }
 
     public void logout() {

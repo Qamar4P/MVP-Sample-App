@@ -4,7 +4,7 @@ package pk.net.now.cornellmobileapp.ui.shared;
  * Created by Qamar on 9/4/2017.
  */
 
-public abstract class BasePresenter<T> {
+public abstract class BasePresenter<T extends BaseView> {
 
 
     public T view;
