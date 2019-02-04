@@ -1,5 +1,5 @@
 # Simple-MVP-App
-Simple MVP pattern without RxJava, ButterKnife, Retrofit. Uploading new app with RxJava and Dagger2 soon
+Simple MVP pattern for beginners ButterKnife, Retrofit. Uploading simple app with RxJava and Dagger2 soon
 
 ## Features
 #### Signup
